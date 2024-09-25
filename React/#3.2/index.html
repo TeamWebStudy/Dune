@@ -1,0 +1,29 @@
+<!-- state: 기본적으로 데이터가 저장되는 곳-->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://www.unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function App(){ 
+            const [counter, setCounter] = React.useState(0); 
+            const onClick = () => {
+                setCounter(counter + 1);
+            }
+                return(
+                <div>
+                    <h3>Total clicks: {counter}</h3> 
+                    <button onClick = {onClick}>Click me</button>
+                </div>
+            //React는 업데이트 사이사이마다, 정확히 어떤 것이 업데이트 됐는지 파악하여  HTML에서 해당부분만 수정한다.
+            );
+        }
+        ReactDOM.render(<App/>, root); 
+        // 계속해서 이 함수를 호출해야 하기 귀찮다.
+    </script>
+</html>
